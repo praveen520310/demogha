@@ -5,6 +5,8 @@ env:
 
 jobs:
   envjob:
+    env:
+      APP_ENV: "UAT"
     runs-on: ubuntu-latest
     steps:
       - name: printenv
