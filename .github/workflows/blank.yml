@@ -1,7 +1,7 @@
 name: job
-on: workflow_dispatch
+on: push
 env:
-  App_ENV: "dev"
+  TAGS: "3.0"
 
 jobs:
   envjob:
@@ -10,4 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: printenv
-        run: echo "welcome to $APP_ENV"
+        run: echo "welcome to $APP_ENV and version is $TAGS"
+  newjob:
+    env:
+      APP_ENV: "dev"
+    runs-on: ubuntu-latest
+    steps:
+      - name: printenv
+        run: echo "welcome to $APP_ENV and version is $TAGS"
