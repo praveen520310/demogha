@@ -1,20 +1,11 @@
 name: job
 on: push
-env:
-  TAGS: "3.0"
 
 jobs:
-  envjob:
-    env:
-      APP_ENV: "UAT"
+  envjob: 
     runs-on: ubuntu-latest
     steps:
       - name: printenv
-        run: echo "welcome to $APP_ENV and version is $TAGS"
-  newjob:
-    env:
-      APP_ENV: "dev"
-    runs-on: ubuntu-latest
-    steps:
-      - name: printenv
-        run: echo "welcome to $APP_ENV and version is $TAGS"
+        run: echo "welcome to  and version is ${{vars.MY_NAME}}"
+        run: echo "welcome to is ${{secrets.MY_SECRETS}}"
+
