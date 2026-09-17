@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: printenv
         run: |
-            echo "welcome to  and version is ${{vars.MY_NAME}}"
+            echo "welcome to is ${{secrets.MY_SECRETS}}"
             
 
