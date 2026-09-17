@@ -1,0 +1,11 @@
+name: job
+on: workflow_dispatch
+env:
+  App_ENV: "dev"
+
+jobs:
+  envjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printenv
+        run: echo "welcome to $APP_ENV"
